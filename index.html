@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="AG Alchemy Consultancy Sdn Bhd">
+    <title>Big Blue SuperApp - System Architecture & Project Proposal | AG Alchemy Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="watermark">CONFIDENTIAL</div>
+    
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+        <span></span>
+    </button>
+    
+    <nav class="nav-sidebar" id="navSidebar">
+        <div class="nav-header">
+            <div class="nav-logo">Big Blue SuperApp</div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-section-label">Overview</li>
+            <li class="nav-item"><a href="#cover" class="nav-link active">Cover</a></li>
+            <li class="nav-item"><a href="#executive-summary" class="nav-link">Executive Summary</a></li>
+            <li class="nav-section-label">Technical</li>
+            <li class="nav-item"><a href="#system-architecture" class="nav-link">System Architecture</a></li>
+            <li class="nav-item"><a href="#core-modules" class="nav-link">Core Modules</a></li>
+            <li class="nav-item"><a href="#integration" class="nav-link">Integration Architecture</a></li>
+            <li class="nav-item"><a href="#scalability" class="nav-link">Scalability & Performance</a></li>
+            <li class="nav-item"><a href="#security" class="nav-link">Security & Compliance</a></li>
+            <li class="nav-section-label">Delivery</li>
+            <li class="nav-item"><a href="#project-plan" class="nav-link">Project Plan</a></li>
+            <li class="nav-item"><a href="#value-proposition" class="nav-link">Value Proposition</a></li>
+            <li class="nav-item"><a href="#risk-mitigation" class="nav-link">Risk & Mitigation</a></li>
+            <li class="nav-item"><a href="#commercial-viability" class="nav-link">Commercial Viability</a></li>
+        </ul>
+    </nav>
+
+    <section class="cover-section" id="cover">
+        <div class="confidential-stamp">STRICTLY CONFIDENTIAL</div>
+        <span class="cover-badge">Technical & Commercial Proposal</span>
+        <div class="cover-logo"><span>BB</span></div>
+        <h1 class="cover-title">Big Blue SuperApp<span class="highlight">System Architecture & Project Plan</span></h1>
+        <p class="cover-subtitle">Comprehensive Design, Development, Implementation, Testing, Commissioning, and Maintenance of an Integrated SuperApp System for EV Taxi, E-Hailing, Limousine, Economy Taxi, and Rent-to-Drive Fleet Operations</p>
+        <div class="cover-meta">
+            <div class="cover-meta-item">
+                <div class="cover-meta-label">Prepared For</div>
+                <div class="cover-meta-value">Big Blue Berhad</div>
+            </div>
+            <div class="cover-meta-item">
+                <div class="cover-meta-label">Prepared By</div>
+                <div class="cover-meta-value">AG Alchemy Consultancy Sdn Bhd</div>
+            </div>
+            <div class="cover-meta-item">
+                <div class="cover-meta-label">Reference</div>
+                <div class="cover-meta-value">BBB-LOA-AG/ACSB/DEC2025</div>
+            </div>
+            <div class="cover-meta-item">
+                <div class="cover-meta-label">Version</div>
+                <div class="cover-meta-value">1.0 - December 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="proposal-container">
+        <section class="section" id="executive-summary">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2 class="section-title">Executive Summary</h2>
+                <p class="section-subtitle">Strategic overview of the Big Blue SuperApp ecosystem and our comprehensive approach to delivering a world-class mobility platform</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📋</div>
+                    <h3 class="card-title">Project Overview</h3>
+                </div>
+                <div class="card-content">
+                    <p>AG Alchemy Consultancy Sdn Bhd is honored to present this comprehensive technical and commercial proposal for the development of the <strong>Big Blue SuperApp</strong> — an integrated mobility platform designed to revolutionize urban transportation across Malaysia's key metropolitan regions: Kuala Lumpur, Johor Bahru, and Penang.</p>
+                    <p>This proposal responds to the Letter of Award (Ref: BBB-LOA-AG/ACSB/DEC2025) dated 17 December 2025, outlining our complete technical architecture, development methodology, project timeline, and commercial framework for delivering a scalable, secure, and feature-rich SuperApp ecosystem.</p>
+                    <div class="highlight-box">
+                        <strong>Core Mission:</strong> To create a unified digital platform that seamlessly connects EV fleet operations, charging infrastructure, payment systems, and real-time tracking capabilities — delivering exceptional experiences for both Riders (consumers) and Service Providers (drivers).
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-4 animate-on-scroll">
+                <div class="stat-card"><div class="stat-value">1,000</div><div class="stat-label">Initial EV Fleet</div></div>
+                <div class="stat-card"><div class="stat-value">2M</div><div class="stat-label">Target Users (3 Years)</div></div>
+                <div class="stat-card"><div class="stat-value">3</div><div class="stat-label">Major Cities</div></div>
+                <div class="stat-card"><div class="stat-value">90</div><div class="stat-label">Days to Launch</div></div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Scope of Work</h3>
+                </div>
+                <div class="card-content">
+                    <p>This Phase 1 engagement encompasses the complete design, development, testing, and deployment of:</p>
+                    <div class="grid-2" style="margin-top: 24px;">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Platform Components</h4>
+                            <ul class="styled-list check-list">
+                                <li>Native iOS Application (iPhone & iPad)</li>
+                                <li>Native Android Application (Phone & Tablet)</li>
+                                <li>Progressive Web Application (Desktop/Laptop)</li>
+                                <li>Driver Partner Mobile Applications</li>
+                                <li>Administrative Dashboard & CMS</li>
+                                <li>Analytics & Reporting Platform</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Core Integrations</h4>
+                            <ul class="styled-list check-list">
+                                <li>Cherry EV Telematics (GPS + Video)</li>
+                                <li>JomCharge EV Charging Network</li>
+                                <li>Payment Gateway (FPX, Cards, e-Wallets)</li>
+                                <li>SMS & Push Notification Services</li>
+                                <li>Real-time Communication Layer</li>
+                                <li>Fleet Management System</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🏆</div>
+                    <h3 class="card-title">Strategic Deliverables</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid-3">
+                        <div class="feature-card">
+                            <div class="feature-icon">🚕</div>
+                            <h4 class="feature-title">Multi-Service Booking</h4>
+                            <p class="feature-desc">Unified platform supporting Taxi, E-Hailing, Limousine, Economy, and Rent-to-Drive services with intelligent dispatch</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h4 class="feature-title">EV-First Ecosystem</h4>
+                            <p class="feature-desc">Native integration with Cherry EV vehicles and JomCharge infrastructure for sustainable mobility</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h4 class="feature-title">Real-Time Intelligence</h4>
+                            <p class="feature-desc">Live GPS tracking, video monitoring, predictive analytics, and operational dashboards</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💳</div>
+                            <h4 class="feature-title">Seamless Payments</h4>
+                            <p class="feature-desc">Multi-channel payment integration including FPX, credit/debit cards, and popular e-wallets</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h4 class="feature-title">Enterprise Security</h4>
+                            <p class="feature-desc">Bank-grade security with PDPA compliance, end-to-end encryption, and comprehensive audit logging</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h4 class="feature-title">Infinite Scalability</h4>
+                            <p class="feature-desc">Cloud-native architecture on GCP designed to scale from 2,000 to 2,000,000+ users seamlessly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SYSTEM ARCHITECTURE -->
+        <section class="section" id="system-architecture">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2 class="section-title">System Architecture</h2>
+                <p class="section-subtitle">Comprehensive technical blueprint designed for performance, scalability, and resilience</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🏗️</div>
+                    <h3 class="card-title">2.1 High-Level Architecture Overview</h3>
+                </div>
+                <div class="card-content">
+                    <p>The Big Blue SuperApp employs a modern <strong>microservices-based architecture</strong> hosted entirely on Google Cloud Platform (GCP). This architecture ensures horizontal scalability, fault isolation, independent deployment cycles, and optimal resource utilization as the platform grows from initial launch to millions of active users.</p>
+                    
+                    <div class="architecture-diagram">
+                        <div class="diagram-title">System Architecture Overview</div>
+                        
+                        <div class="diagram-layer">
+                            <div class="layer-content" style="background: rgba(212, 168, 75, 0.1);">
+                                <div class="diagram-node primary"><div class="node-icon">📱</div><div class="node-label">iOS App</div></div>
+                                <div class="diagram-node primary"><div class="node-icon">📱</div><div class="node-label">Android App</div></div>
+                                <div class="diagram-node primary"><div class="node-icon">🖥️</div><div class="node-label">Web PWA</div></div>
+                                <div class="diagram-node primary"><div class="node-icon">👨‍✈️</div><div class="node-label">Driver App</div></div>
+                                <div class="diagram-node primary"><div class="node-icon">⚙️</div><div class="node-label">Admin Portal</div></div>
+                            </div>
+                            <p style="text-align: center; color: var(--gray-500); font-size: 0.8rem; margin-top: 8px;">CLIENT LAYER - User Interfaces</p>
+                        </div>
+                        
+                        <div class="diagram-connector">▼</div>
+                        
+                        <div class="diagram-layer">
+                            <div class="layer-content" style="background: rgba(23, 162, 184, 0.1);">
+                                <div class="diagram-node secondary"><div class="node-icon">🌐</div><div class="node-label">Cloud CDN</div></div>
+                                <div class="diagram-node secondary"><div class="node-icon">🔀</div><div class="node-label">Load Balancer</div></div>
+                                <div class="diagram-node secondary"><div class="node-icon">🚪</div><div class="node-label">API Gateway</div></div>
+                                <div class="diagram-node secondary"><div class="node-icon">🔐</div><div class="node-label">Auth Service</div></div>
+                            </div>
+                            <p style="text-align: center; color: var(--gray-500); font-size: 0.8rem; margin-top: 8px;">EDGE LAYER - Traffic Management & Security</p>
+                        </div>
+                        
+                        <div class="diagram-connector">▼</div>
+                        
+                        <div class="diagram-layer">
+                            <div class="layer-content" style="background: rgba(40, 167, 69, 0.1);">
+                                <div class="diagram-node tertiary"><div class="node-icon">👤</div><div class="node-label">User Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">🚗</div><div class="node-label">Booking Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">📍</div><div class="node-label">Location Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">💰</div><div class="node-label">Payment Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">🔔</div><div class="node-label">Notification Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">🚙</div><div class="node-label">Fleet Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">⚡</div><div class="node-label">Charging Service</div></div>
+                                <div class="diagram-node tertiary"><div class="node-icon">📊</div><div class="node-label">Analytics Service</div></div>
+                            </div>
+                            <p style="text-align: center; color: var(--gray-500); font-size: 0.8rem; margin-top: 8px;">APPLICATION LAYER - Go Microservices (GKE)</p>
+                        </div>
+                        
+                        <div class="diagram-connector">▼</div>
+                        
+                        <div class="diagram-layer">
+                            <div class="layer-content">
+                                <div class="diagram-node"><div class="node-icon">🐘</div><div class="node-label">Cloud SQL (PostgreSQL)</div></div>
+                                <div class="diagram-node"><div class="node-icon">🔴</div><div class="node-label">Memorystore (Redis)</div></div>
+                                <div class="diagram-node"><div class="node-icon">📨</div><div class="node-label">Pub/Sub</div></div>
+                                <div class="diagram-node"><div class="node-icon">📦</div><div class="node-label">Cloud Storage</div></div>
+                                <div class="diagram-node"><div class="node-icon">📈</div><div class="node-label">BigQuery</div></div>
+                            </div>
+                            <p style="text-align: center; color: var(--gray-500); font-size: 0.8rem; margin-top: 8px;">DATA LAYER - Persistence & Messaging</p>
+                        </div>
+                        
+                        <div class="diagram-connector">▼</div>
+                        
+                        <div class="diagram-layer">
+                            <div class="layer-content" style="background: rgba(255, 193, 7, 0.1);">
+                                <div class="diagram-node" style="border-color: var(--warning);"><div class="node-icon">🚗</div><div class="node-label">Cherry EV API</div></div>
+                                <div class="diagram-node" style="border-color: var(--warning);"><div class="node-icon">🔌</div><div class="node-label">JomCharge API</div></div>
+                                <div class="diagram-node" style="border-color: var(--warning);"><div class="node-icon">💳</div><div class="node-label">Payment Gateway</div></div>
+                                <div class="diagram-node" style="border-color: var(--warning);"><div class="node-icon">📧</div><div class="node-label">SMS/Email</div></div>
+                                <div class="diagram-node" style="border-color: var(--warning);"><div class="node-icon">🗺️</div><div class="node-label">Google Maps</div></div>
+                            </div>
+                            <p style="text-align: center; color: var(--gray-500); font-size: 0.8rem; margin-top: 8px;">INTEGRATION LAYER - Third-Party Services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">☁️</div>
+                    <h3 class="card-title">2.2 Cloud Infrastructure (Google Cloud Platform)</h3>
+                </div>
+                <div class="card-content">
+                    <p>The entire Big Blue SuperApp infrastructure will be deployed on Google Cloud Platform, leveraging GCP's enterprise-grade services. The primary region will be <strong>asia-southeast1 (Singapore)</strong> with disaster recovery provisions in <strong>asia-southeast2 (Jakarta)</strong>.</p>
+                    
+                    <div class="highlight-box info">
+                        <strong>Why Google Cloud Platform?</strong><br>
+                        GCP offers superior managed Kubernetes (GKE), best-in-class networking infrastructure, native integration with Google Maps Platform, competitive pricing in Southeast Asia, and comprehensive compliance certifications.
+                    </div>
+                    
+                    <h4 style="color: var(--gold-primary); margin: 32px 0 20px;">GCP Services Deployment Matrix</h4>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Component</th><th>GCP Service</th><th>Configuration</th><th>Purpose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Container Orchestration</strong></td><td>Google Kubernetes Engine (GKE)</td><td>Autopilot Mode, Multi-zone</td><td>Microservices deployment & auto-scaling</td></tr>
+                            <tr><td><strong>Primary Database</strong></td><td>Cloud SQL (PostgreSQL 15)</td><td>High Availability, 16 vCPU / 64GB RAM</td><td>Transactional data, user profiles, bookings</td></tr>
+                            <tr><td><strong>Caching Layer</strong></td><td>Memorystore for Redis</td><td>Standard Tier, 26GB</td><td>Session management, real-time location cache</td></tr>
+                            <tr><td><strong>Event Streaming</strong></td><td>Cloud Pub/Sub</td><td>Standard throughput</td><td>Asynchronous messaging, event-driven architecture</td></tr>
+                            <tr><td><strong>Object Storage</strong></td><td>Cloud Storage</td><td>Standard class, Multi-regional</td><td>Documents, images, video recordings</td></tr>
+                            <tr><td><strong>Analytics Warehouse</strong></td><td>BigQuery</td><td>On-demand pricing</td><td>Business intelligence, historical analytics</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">⚙️</div>
+                    <h3 class="card-title">2.3 Backend Architecture (Go Microservices)</h3>
+                </div>
+                <div class="card-content">
+                    <p>The backend is architected using <strong>Go (Golang)</strong> as the primary programming language. Go is selected for its exceptional performance, native concurrency through goroutines, efficient memory management, and proven track record at Uber, Grab, and Gojek.</p>
+                    
+                    <div class="two-col">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Technology Stack</h4>
+                            <div class="tech-grid">
+                                <div class="tech-item"><div class="tech-icon">🔵</div><div class="tech-name">Go 1.22+</div></div>
+                                <div class="tech-item"><div class="tech-icon">🌿</div><div class="tech-name">Gin Framework</div></div>
+                                <div class="tech-item"><div class="tech-icon">🔗</div><div class="tech-name">gRPC</div></div>
+                                <div class="tech-item"><div class="tech-icon">🐘</div><div class="tech-name">PostgreSQL</div></div>
+                                <div class="tech-item"><div class="tech-icon">🔴</div><div class="tech-name">Redis</div></div>
+                                <div class="tech-item"><div class="tech-icon">🐳</div><div class="tech-name">Docker</div></div>
+                                <div class="tech-item"><div class="tech-icon">☸️</div><div class="tech-name">Kubernetes</div></div>
+                                <div class="tech-item"><div class="tech-icon">📊</div><div class="tech-name">Prometheus</div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Why Go for Big Blue?</h4>
+                            <ul class="styled-list">
+                                <li><strong>Performance:</strong> Compiled language with near-C performance</li>
+                                <li><strong>Concurrency:</strong> Goroutines handle thousands of connections</li>
+                                <li><strong>Simplicity:</strong> Clean syntax reduces bugs</li>
+                                <li><strong>Deployment:</strong> Single binary deployment</li>
+                                <li><strong>Industry Proven:</strong> Powers Uber, Grab, Gojek</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">2.4 Frontend Architecture</h3>
+                </div>
+                <div class="card-content">
+                    <p>Cross-platform mobile development using <strong>Flutter 3.x</strong> for Rider and Driver apps, with <strong>Next.js 14</strong> for the Progressive Web Application and Admin Dashboard.</p>
+                    
+                    <div class="grid-2" style="margin-top: 24px;">
+                        <div class="content-card" style="margin-bottom: 0;">
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">📱 Mobile Applications</h4>
+                            <p><strong>Framework:</strong> Flutter 3.x (Cross-platform)</p>
+                            <ul class="styled-list" style="margin-top: 16px;">
+                                <li><strong>Rider App:</strong> Book rides, track trips, payments</li>
+                                <li><strong>Driver App:</strong> Accept bookings, navigation, earnings</li>
+                                <li>Native platform integrations (GPS, Camera, Biometrics)</li>
+                                <li>Offline-first architecture with local caching</li>
+                            </ul>
+                        </div>
+                        <div class="content-card" style="margin-bottom: 0;">
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">🖥️ Web Application</h4>
+                            <p><strong>Framework:</strong> Next.js 14 (React)</p>
+                            <ul class="styled-list" style="margin-top: 16px;">
+                                <li>Server-side rendering for SEO & performance</li>
+                                <li>Responsive design (Desktop, Tablet, Mobile)</li>
+                                <li>PWA installable on Windows, macOS</li>
+                                <li>Real-time updates via WebSocket</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CORE MODULES -->
+        <section class="section" id="core-modules">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2 class="section-title">Core Modules & Features</h2>
+                <p class="section-subtitle">Detailed functional specifications for each major system component</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">👥</div>
+                    <h3 class="card-title">3.1 User Management Module</h3>
+                </div>
+                <div class="card-content">
+                    <p>Handles all identity, authentication, and profile management for both Riders and Service Providers (drivers).</p>
+                    
+                    <div class="two-col" style="margin-top: 24px;">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">🚶 Rider Features</h4>
+                            <ul class="styled-list check-list">
+                                <li>Phone number registration with OTP verification</li>
+                                <li>Social login options (Google, Apple, Facebook)</li>
+                                <li>Profile management (name, photo, email)</li>
+                                <li>Saved addresses (Home, Work, Favorites)</li>
+                                <li>Payment method management</li>
+                                <li>Ride history & receipts</li>
+                                <li>Rating & review submission</li>
+                                <li>Promotional code redemption</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">🚗 Driver Features</h4>
+                            <ul class="styled-list check-list">
+                                <li>Driver application & registration flow</li>
+                                <li>Document upload (IC, License, Insurance)</li>
+                                <li>KYC verification workflow</li>
+                                <li>Vehicle assignment & management</li>
+                                <li>Online/offline status toggle</li>
+                                <li>Earnings dashboard & history</li>
+                                <li>Performance metrics & ratings</li>
+                                <li>Emergency SOS button</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🚕</div>
+                    <h3 class="card-title">3.2 Ride Booking & Dispatch Engine</h3>
+                </div>
+                <div class="card-content">
+                    <p>The heart of the SuperApp — an intelligent booking and dispatch system that matches riders with optimal drivers based on proximity, vehicle type, driver rating, and service requirements.</p>
+                    
+                    <h4 style="color: var(--gold-primary); margin: 24px 0 16px;">Service Types Supported</h4>
+                    
+                    <div class="grid-3">
+                        <div class="feature-card">
+                            <div class="feature-icon">🚕</div>
+                            <h4 class="feature-title">EV Taxi</h4>
+                            <p class="feature-desc">Metered taxi service using Big Blue EV fleet with standard taxi fares</p>
+                            <span class="badge badge-gold" style="margin-top: 12px;">Primary Service</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h4 class="feature-title">E-Hailing</h4>
+                            <p class="feature-desc">App-based ride booking with dynamic pricing based on demand</p>
+                            <span class="badge badge-info" style="margin-top: 12px;">High Demand</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎩</div>
+                            <h4 class="feature-title">Limousine</h4>
+                            <p class="feature-desc">Premium service with luxury vehicles and professional chauffeurs</p>
+                            <span class="badge badge-warning" style="margin-top: 12px;">Premium</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💰</div>
+                            <h4 class="feature-title">Economy</h4>
+                            <p class="feature-desc">Budget-friendly option with competitive pricing for cost-conscious riders</p>
+                            <span class="badge badge-success" style="margin-top: 12px;">Budget</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔑</div>
+                            <h4 class="feature-title">Rent-to-Drive</h4>
+                            <p class="feature-desc">Self-drive EV rental by hour or day with flexible pickup/return</p>
+                            <span class="badge badge-info" style="margin-top: 12px;">Phase 1B</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📅</div>
+                            <h4 class="feature-title">Scheduled Rides</h4>
+                            <p class="feature-desc">Book rides in advance for airport transfers or appointments</p>
+                            <span class="badge badge-gold" style="margin-top: 12px;">All Services</span>
+                        </div>
+                    </div>
+                    
+                    <h4 style="color: var(--gold-primary); margin: 32px 0 16px;">Dispatch Algorithm Factors</h4>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Factor</th><th>Weight</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Proximity</strong></td><td>40%</td><td>Distance from driver to pickup location</td></tr>
+                            <tr><td><strong>ETA</strong></td><td>25%</td><td>Estimated time of arrival considering traffic</td></tr>
+                            <tr><td><strong>Driver Rating</strong></td><td>15%</td><td>Historical performance and ratings</td></tr>
+                            <tr><td><strong>Vehicle Battery</strong></td><td>10%</td><td>Sufficient charge for trip + buffer</td></tr>
+                            <tr><td><strong>Acceptance Rate</strong></td><td>10%</td><td>Driver's acceptance behavior</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📍</div>
+                    <h3 class="card-title">3.3 GPS Tracking & Fleet Management</h3>
+                </div>
+                <div class="card-content">
+                    <p>Real-time visibility into the entire Big Blue fleet through GPS tracking, enabling efficient operations and rider transparency.</p>
+                    
+                    <div class="grid-2" style="margin-top: 24px;">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Real-Time Tracking Features</h4>
+                            <ul class="styled-list check-list">
+                                <li>Live driver location on map (3-second updates)</li>
+                                <li>ETA calculation with traffic awareness</li>
+                                <li>Route visualization during trip</li>
+                                <li>Historical trip replay</li>
+                                <li>Geofencing alerts (service zones)</li>
+                                <li>Speed monitoring & alerts</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Fleet Management Dashboard</h4>
+                            <ul class="styled-list check-list">
+                                <li>Real-time fleet map overview</li>
+                                <li>Vehicle status monitoring</li>
+                                <li>Driver activity tracking</li>
+                                <li>Demand heatmaps by zone</li>
+                                <li>Fleet utilization metrics</li>
+                                <li>Maintenance scheduling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-title">Fleet Distribution by City (Phase 1 Target)</div>
+                        <canvas id="fleetDistributionChart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">💳</div>
+                    <h3 class="card-title">3.4 Payment Gateway Integration</h3>
+                </div>
+                <div class="card-content">
+                    <p>Comprehensive payment processing supporting multiple methods popular in Malaysia.</p>
+                    
+                    <div class="grid-4" style="margin-top: 24px;">
+                        <div class="stat-card"><div class="stat-value" style="font-size: 2rem;">💳</div><div class="stat-label">Credit/Debit Cards</div></div>
+                        <div class="stat-card"><div class="stat-value" style="font-size: 2rem;">🏦</div><div class="stat-label">FPX Online Banking</div></div>
+                        <div class="stat-card"><div class="stat-value" style="font-size: 2rem;">📱</div><div class="stat-label">E-Wallets</div></div>
+                        <div class="stat-card"><div class="stat-value" style="font-size: 2rem;">💰</div><div class="stat-label">Big Blue Wallet</div></div>
+                    </div>
+                    
+                    <h4 style="color: var(--gold-primary); margin: 32px 0 16px;">Supported Payment Methods</h4>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Method</th><th>Provider</th><th>Transaction Fee</th><th>Settlement</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Visa / Mastercard</strong></td><td>iPay88 / Stripe</td><td>1.5% + RM 0.50</td><td>T+2 Business Days</td></tr>
+                            <tr><td><strong>FPX</strong></td><td>iPay88</td><td>RM 1.00 flat</td><td>T+1 Business Day</td></tr>
+                            <tr><td><strong>Touch 'n Go eWallet</strong></td><td>TNG Digital</td><td>1.0%</td><td>T+1 Business Day</td></tr>
+                            <tr><td><strong>GrabPay</strong></td><td>Grab Financial</td><td>1.5%</td><td>T+2 Business Days</td></tr>
+                            <tr><td><strong>Boost</strong></td><td>Boost</td><td>1.0%</td><td>T+1 Business Day</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">3.5 JomCharge EV Charging Integration</h3>
+                </div>
+                <div class="card-content">
+                    <p>Seamless integration with JomCharge's nationwide EV charging network enabling drivers to locate and use charging stations directly from the app.</p>
+                    
+                    <div class="highlight-box success">
+                        <strong>Partnership Value:</strong> JomCharge operates 500+ charging stations across Malaysia, with dense coverage in Kuala Lumpur, Johor Bahru, and Penang — perfectly aligned with Big Blue's operational zones.
+                    </div>
+                    
+                    <div class="grid-2" style="margin-top: 24px;">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Driver App Features</h4>
+                            <ul class="styled-list check-list">
+                                <li>Nearby charging station discovery</li>
+                                <li>Real-time charger availability status</li>
+                                <li>Navigation to selected station</li>
+                                <li>Remote session initiation via QR scan</li>
+                                <li>Live charging progress monitoring</li>
+                                <li>Charging history & cost tracking</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Fleet Management Features</h4>
+                            <ul class="styled-list check-list">
+                                <li>Fleet-wide charging analytics</li>
+                                <li>Charging cost allocation</li>
+                                <li>Optimal charging time recommendations</li>
+                                <li>Battery health monitoring</li>
+                                <li>Corporate billing integration</li>
+                                <li>Charging SLA monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">3.6 Analytics & Reporting Dashboard</h3>
+                </div>
+                <div class="card-content">
+                    <p>Comprehensive business intelligence platform for data-driven decision making.</p>
+                    
+                    <div class="grid-2" style="margin-top: 24px;">
+                        <div class="chart-container">
+                            <div class="chart-title">Daily Ride Volume Projection (Year 1)</div>
+                            <canvas id="rideVolumeChart" class="chart-canvas"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Revenue Distribution by Service Type</div>
+                            <canvas id="revenueDistributionChart" class="chart-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTEGRATION ARCHITECTURE -->
+        <section class="section" id="integration">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2 class="section-title">Integration Architecture</h2>
+                <p class="section-subtitle">Seamless connectivity with external systems and third-party services</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🔗</div>
+                    <h3 class="card-title">4.1 Third-Party Integrations Overview</h3>
+                </div>
+                <div class="card-content">
+                    <p>The Big Blue SuperApp ecosystem relies on strategic integrations with best-in-class third-party services.</p>
+                    
+                    <div class="architecture-diagram">
+                        <div class="diagram-title">Integration Ecosystem Map</div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 20px;">
+                            <div style="text-align: center;">
+                                <h5 style="color: var(--gold-primary); margin-bottom: 16px;">Vehicle & Fleet</h5>
+                                <div class="diagram-node" style="width: 100%; margin-bottom: 12px;"><div class="node-label">Cherry EV Telematics</div></div>
+                                <div class="diagram-node" style="width: 100%;"><div class="node-label">JomCharge Network</div></div>
+                            </div>
+                            <div style="text-align: center;">
+                                <h5 style="color: var(--gold-primary); margin-bottom: 16px;">Payments</h5>
+                                <div class="diagram-node" style="width: 100%; margin-bottom: 12px;"><div class="node-label">iPay88 Gateway</div></div>
+                                <div class="diagram-node" style="width: 100%; margin-bottom: 12px;"><div class="node-label">Touch 'n Go</div></div>
+                                <div class="diagram-node" style="width: 100%;"><div class="node-label">GrabPay / Boost</div></div>
+                            </div>
+                            <div style="text-align: center;">
+                                <h5 style="color: var(--gold-primary); margin-bottom: 16px;">Communications</h5>
+                                <div class="diagram-node" style="width: 100%; margin-bottom: 12px;"><div class="node-label">Twilio SMS</div></div>
+                                <div class="diagram-node" style="width: 100%; margin-bottom: 12px;"><div class="node-label">Firebase FCM</div></div>
+                                <div class="diagram-node" style="width: 100%;"><div class="node-label">SendGrid Email</div></div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 24px;">
+                            <h5 style="color: var(--gold-primary); margin-bottom: 16px;">Maps & Location</h5>
+                            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                                <div class="diagram-node primary"><div class="node-label">Google Maps Platform</div></div>
+                                <div class="diagram-node"><div class="node-label">Google Places API</div></div>
+                                <div class="diagram-node"><div class="node-label">Google Directions API</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🚗</div>
+                    <h3 class="card-title">4.2 Cherry EV Telematics Integration</h3>
+                </div>
+                <div class="card-content">
+                    <p>Deep integration with Cherry EV's vehicle telematics platform provides real-time vehicle data, diagnostics, and video monitoring.</p>
+                    
+                    <div class="two-col">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Data Points Captured</h4>
+                            <ul class="styled-list">
+                                <li><strong>Location:</strong> GPS coordinates at 3-second intervals</li>
+                                <li><strong>Speed:</strong> Current vehicle speed in km/h</li>
+                                <li><strong>Battery:</strong> State of charge (%), estimated range</li>
+                                <li><strong>Odometer:</strong> Total distance traveled</li>
+                                <li><strong>Diagnostics:</strong> DTC codes, health status</li>
+                                <li><strong>Video:</strong> Event-triggered clip URLs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Integration Protocol</h4>
+                            <div class="code-block">
+                                <pre><span class="comment">// Cherry EV API Configuration</span>
+
+<span class="keyword">Endpoint:</span> https://api.cheryev.com/v2/telematics
+<span class="keyword">Auth:</span> OAuth 2.0 Client Credentials
+<span class="keyword">Protocol:</span> REST + WebSocket (streaming)
+<span class="keyword">Rate Limit:</span> 1000 requests/minute
+
+<span class="comment">// Data Sync Strategy</span>
+- Batch polling: Every 30 sec for fleet status
+- WebSocket: Real-time during active trips
+- Webhooks: Event-driven alerts</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SCALABILITY & PERFORMANCE -->
+        <section class="section" id="scalability">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2 class="section-title">Scalability & Performance</h2>
+                <p class="section-subtitle">Engineering for growth from 2,000 to 2,000,000 users over three years</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📈</div>
+                    <h3 class="card-title">5.1 Scaling Strategy</h3>
+                </div>
+                <div class="card-content">
+                    <p>The architecture is designed with horizontal scalability as a core principle, enabling cost-efficient growth from launch to millions of users.</p>
+                    
+                    <div class="chart-container">
+                        <div class="chart-title">User Growth Projection (3-Year Roadmap)</div>
+                        <canvas id="userGrowthChart" class="chart-canvas"></canvas>
+                    </div>
+                    
+                    <h4 style="color: var(--gold-primary); margin: 32px 0 16px;">Scaling Phases</h4>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Launch Phase (0-6 Months)</div>
+                                <div class="timeline-date">2,000 - 50,000 Users</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>Single GKE cluster with 3-5 nodes</li>
+                                        <li>Cloud SQL single instance with read replica</li>
+                                        <li>Basic Redis cache (13GB)</li>
+                                        <li>Estimated monthly infra: RM 15,000 - 25,000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Growth Phase (6-18 Months)</div>
+                                <div class="timeline-date">50,000 - 500,000 Users</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>GKE Autopilot with 10-20 nodes</li>
+                                        <li>Cloud SQL HA with multiple read replicas</li>
+                                        <li>Redis cluster (52GB)</li>
+                                        <li>Estimated monthly infra: RM 50,000 - 100,000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Scale Phase (18-36 Months)</div>
+                                <div class="timeline-date">500,000 - 2,000,000 Users</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>Multi-region GKE deployment</li>
+                                        <li>Database sharding by city/region</li>
+                                        <li>Redis cluster HA (104GB+)</li>
+                                        <li>Estimated monthly infra: RM 150,000 - 300,000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">5.2 Performance Benchmarks</h3>
+                </div>
+                <div class="card-content">
+                    <p>Target performance metrics ensuring exceptional user experience.</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Metric</th><th>Target</th><th>Measurement</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>API Response Time (P95)</strong></td><td>&lt; 200ms</td><td>Cloud Monitoring latency metrics</td></tr>
+                            <tr><td><strong>Location Update Latency</strong></td><td>&lt; 500ms end-to-end</td><td>Driver app → Rider app</td></tr>
+                            <tr><td><strong>Booking Request to Match</strong></td><td>&lt; 15 seconds</td><td>Request → driver assignment</td></tr>
+                            <tr><td><strong>App Launch Time</strong></td><td>&lt; 3 seconds (cold start)</td><td>Firebase Performance</td></tr>
+                            <tr><td><strong>System Uptime</strong></td><td>99.9%</td><td>Cloud Monitoring uptime checks</td></tr>
+                            <tr><td><strong>Payment Processing</strong></td><td>&lt; 5 seconds</td><td>Initiation → confirmation</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: SECURITY & COMPLIANCE -->
+        <section class="section" id="security">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2 class="section-title">Security & Compliance</h2>
+                <p class="section-subtitle">Enterprise-grade security framework with Malaysian regulatory compliance</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🛡️</div>
+                    <h3 class="card-title">6.1 Data Protection (PDPA Malaysia)</h3>
+                </div>
+                <div class="card-content">
+                    <p>Full compliance with Malaysia's Personal Data Protection Act 2010 (PDPA).</p>
+                    
+                    <div class="highlight-box">
+                        <strong>PDPA Principles Implemented:</strong>
+                        <ul class="styled-list" style="margin-top: 12px;">
+                            <li><strong>General Principle:</strong> Data processed only with user consent</li>
+                            <li><strong>Notice & Choice:</strong> Clear privacy policy and consent mechanisms</li>
+                            <li><strong>Disclosure:</strong> No third-party sharing without explicit consent</li>
+                            <li><strong>Security:</strong> Technical and organizational measures to protect data</li>
+                            <li><strong>Retention:</strong> Data retained only as long as necessary</li>
+                            <li><strong>Access:</strong> Users can request and receive their personal data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🔐</div>
+                    <h3 class="card-title">6.2 Security Architecture</h3>
+                </div>
+                <div class="card-content">
+                    <div class="architecture-diagram">
+                        <div class="diagram-title">Defense-in-Depth Security Model</div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 600px; margin: 0 auto;">
+                            <div style="background: rgba(220, 53, 69, 0.2); border: 2px solid var(--danger); border-radius: 12px; padding: 16px; text-align: center;">
+                                <strong style="color: var(--danger);">PERIMETER</strong>
+                                <p style="font-size: 0.85rem; margin-top: 8px;">Cloud Armor WAF • DDoS Protection • SSL/TLS Termination</p>
+                            </div>
+                            <div style="background: rgba(255, 193, 7, 0.2); border: 2px solid var(--warning); border-radius: 12px; padding: 16px; text-align: center;">
+                                <strong style="color: var(--warning);">NETWORK</strong>
+                                <p style="font-size: 0.85rem; margin-top: 8px;">VPC Isolation • Private Subnets • Firewall Rules • mTLS</p>
+                            </div>
+                            <div style="background: rgba(23, 162, 184, 0.2); border: 2px solid var(--info); border-radius: 12px; padding: 16px; text-align: center;">
+                                <strong style="color: var(--info);">APPLICATION</strong>
+                                <p style="font-size: 0.85rem; margin-top: 8px;">JWT Auth • RBAC • Input Validation • OWASP Top 10</p>
+                            </div>
+                            <div style="background: rgba(40, 167, 69, 0.2); border: 2px solid var(--success); border-radius: 12px; padding: 16px; text-align: center;">
+                                <strong style="color: var(--success);">DATA</strong>
+                                <p style="font-size: 0.85rem; margin-top: 8px;">AES-256 Encryption • Field-level Encryption • KMS</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="two-col" style="margin-top: 32px;">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Encryption Standards</h4>
+                            <ul class="styled-list">
+                                <li><strong>Data in Transit:</strong> TLS 1.3</li>
+                                <li><strong>Data at Rest:</strong> AES-256</li>
+                                <li><strong>Sensitive Fields:</strong> AES-256-GCM</li>
+                                <li><strong>Key Management:</strong> Cloud KMS</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Authentication</h4>
+                            <ul class="styled-list">
+                                <li>Phone + OTP (primary)</li>
+                                <li>Social OAuth (Google, Apple)</li>
+                                <li>Biometric (Face ID, Fingerprint)</li>
+                                <li>JWT with short expiry + refresh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: PROJECT PLAN & TIMELINE -->
+        <section class="section" id="project-plan">
+            <div class="section-header">
+                <div class="section-number">7</div>
+                <h2 class="section-title">Project Plan & Timeline</h2>
+                <p class="section-subtitle">90-day delivery roadmap with sprint-based agile methodology</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📅</div>
+                    <h3 class="card-title">7.1 Phase 1 Breakdown (90 Days)</h3>
+                </div>
+                <div class="card-content">
+                    <p>The 90-day development timeline is structured into three major phases: Foundation (Weeks 1-4), Core Development (Weeks 5-10), and Integration & Launch (Weeks 11-13).</p>
+                    
+                    <div class="chart-container">
+                        <div class="chart-title">Project Timeline - Gantt Overview</div>
+                        <canvas id="ganttChart" class="chart-canvas" style="max-height: 500px;"></canvas>
+                    </div>
+                    
+                    <div class="timeline" style="margin-top: 40px;">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">A</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Foundation Phase</div>
+                                <div class="timeline-date">Weeks 1-4 (Days 1-28)</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>GCP project setup & IAM configuration</li>
+                                        <li>GKE cluster provisioning</li>
+                                        <li>Database schema design & implementation</li>
+                                        <li>CI/CD pipeline configuration</li>
+                                        <li>API gateway & authentication service</li>
+                                        <li>UI/UX design finalization</li>
+                                    </ul>
+                                    <p><strong>Deliverables:</strong> System Blueprint approval, dev environment ready</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">B</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Core Development Phase</div>
+                                <div class="timeline-date">Weeks 5-10 (Days 29-70)</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>User Service (registration, auth, profiles)</li>
+                                        <li>Booking Service (dispatch, fare engine)</li>
+                                        <li>Location Service (real-time tracking)</li>
+                                        <li>Payment Service (gateway integration)</li>
+                                        <li>Fleet Service (Cherry EV integration)</li>
+                                        <li>Rider & Driver mobile apps (Flutter)</li>
+                                    </ul>
+                                    <p><strong>Deliverables:</strong> Feature-complete applications</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">C</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Integration & Launch Phase</div>
+                                <div class="timeline-date">Weeks 11-13 (Days 71-90)</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>End-to-end integration testing</li>
+                                        <li>Performance & load testing</li>
+                                        <li>Security audit & penetration testing</li>
+                                        <li>User Acceptance Testing (UAT)</li>
+                                        <li>App store submissions (iOS, Android)</li>
+                                        <li>Production deployment & go-live</li>
+                                    </ul>
+                                    <p><strong>Deliverables:</strong> Production system live, UAT sign-off</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🏃</div>
+                    <h3 class="card-title">7.2 Sprint Schedule & Milestones</h3>
+                </div>
+                <div class="card-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Sprint</th><th>Dates</th><th>Key Deliverables</th><th>Milestone</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Sprint 0</strong></td><td>Week 1-2</td><td>Blueprint approval, environment setup</td><td><span class="badge badge-gold">M1: Kickoff</span></td></tr>
+                            <tr><td><strong>Sprint 1</strong></td><td>Week 3-4</td><td>Auth service, database, CI/CD</td><td><span class="badge badge-info">M2: Foundation</span></td></tr>
+                            <tr><td><strong>Sprint 2</strong></td><td>Week 5-6</td><td>User service, booking service core</td><td></td></tr>
+                            <tr><td><strong>Sprint 3</strong></td><td>Week 7-8</td><td>Location service, payment service</td><td><span class="badge badge-success">M3: Core Features</span></td></tr>
+                            <tr><td><strong>Sprint 4</strong></td><td>Week 9-10</td><td>Fleet & charging services, mobile apps</td><td></td></tr>
+                            <tr><td><strong>Sprint 5</strong></td><td>Week 11-12</td><td>Integration testing, UAT</td><td><span class="badge badge-warning">M4: UAT Ready</span></td></tr>
+                            <tr><td><strong>Sprint 6</strong></td><td>Week 13</td><td>Production deployment, go-live</td><td><span class="badge badge-danger">M5: LAUNCH</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">👥</div>
+                    <h3 class="card-title">7.3 Resource Allocation</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid-3">
+                        <div class="feature-card">
+                            <div class="feature-icon">👔</div>
+                            <h4 class="feature-title">Project Management</h4>
+                            <p class="feature-desc">1 Project Manager<br>1 Technical Lead<br>1 Scrum Master</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚙️</div>
+                            <h4 class="feature-title">Backend Development</h4>
+                            <p class="feature-desc">4 Senior Go Engineers<br>2 DevOps Engineers<br>1 Database Specialist</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h4 class="feature-title">Frontend Development</h4>
+                            <p class="feature-desc">3 Flutter Developers<br>2 React Developers<br>1 UI/UX Designer</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🧪</div>
+                            <h4 class="feature-title">Quality Assurance</h4>
+                            <p class="feature-desc">2 QA Engineers<br>1 Automation Engineer<br>1 Security Tester</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔗</div>
+                            <h4 class="feature-title">Integration</h4>
+                            <p class="feature-desc">1 Integration Architect<br>1 API Specialist<br>Vendor support</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📞</div>
+                            <h4 class="feature-title">Support</h4>
+                            <p class="feature-desc">1 Business Analyst<br>1 Documentation Lead<br>Training resources</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box" style="margin-top: 24px;">
+                        <strong>Total Team Size:</strong> 22 dedicated resources for Phase 1 delivery, with additional specialist consultants available on-demand.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: UNIQUE VALUE PROPOSITION -->
+        <section class="section" id="value-proposition">
+            <div class="section-header">
+                <div class="section-number">8</div>
+                <h2 class="section-title">Unique Value Proposition</h2>
+                <p class="section-subtitle">Distinctive advantages that position Big Blue for market leadership</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🏆</div>
+                    <h3 class="card-title">8.1 Competitive Differentiation</h3>
+                </div>
+                <div class="card-content">
+                    <p>The Big Blue SuperApp enters the Malaysian mobility market with unique differentiators that established players cannot easily replicate.</p>
+                    
+                    <div class="grid-2">
+                        <div class="feature-card" style="text-align: left;">
+                            <div class="feature-icon" style="margin: 0 0 16px 0;">🔋</div>
+                            <h4 class="feature-title">100% Electric Fleet</h4>
+                            <p class="feature-desc">Malaysia's first fully electric ride-hailing fleet, aligning with national sustainability goals. Lower operational costs enable competitive pricing while maintaining profitability.</p>
+                        </div>
+                        <div class="feature-card" style="text-align: left;">
+                            <div class="feature-icon" style="margin: 0 0 16px 0;">🔗</div>
+                            <h4 class="feature-title">Vertically Integrated Ecosystem</h4>
+                            <p class="feature-desc">Ownership of vehicles and strategic partnership with JomCharge creates unmatched operational control. Consistent service quality and brand experience.</p>
+                        </div>
+                        <div class="feature-card" style="text-align: left;">
+                            <div class="feature-icon" style="margin: 0 0 16px 0;">📹</div>
+                            <h4 class="feature-title">Safety-First Technology</h4>
+                            <p class="feature-desc">Built-in video monitoring and advanced telematics provide unprecedented safety and accountability — addressing the primary concern of Malaysian riders.</p>
+                        </div>
+                        <div class="feature-card" style="text-align: left;">
+                            <div class="feature-icon" style="margin: 0 0 16px 0;">🚗</div>
+                            <h4 class="feature-title">Multi-Service Platform</h4>
+                            <p class="feature-desc">Single app serving all mobility needs from budget economy rides to premium limousine services and self-drive rentals. Captures diverse market segments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-title">8.2 Technology Advantages</h3>
+                </div>
+                <div class="card-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Advantage</th><th>Big Blue</th><th>Legacy Competitors</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Architecture</strong></td><td>Cloud-native microservices</td><td>Monolithic or hybrid systems</td></tr>
+                            <tr><td><strong>Scalability</strong></td><td>Auto-scaling on demand</td><td>Manual capacity planning</td></tr>
+                            <tr><td><strong>Real-time Latency</strong></td><td>&lt;500ms location updates</td><td>1-3 second delays typical</td></tr>
+                            <tr><td><strong>Infrastructure Cost</strong></td><td>Pay-per-use (GCP)</td><td>Fixed datacenter costs</td></tr>
+                            <tr><td><strong>Deployment Speed</strong></td><td>Multiple deploys/day possible</td><td>Weekly/monthly releases</td></tr>
+                            <tr><td><strong>Vehicle Telemetry</strong></td><td>Native EV integration</td><td>Third-party GPS dongles</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🌱</div>
+                    <h3 class="card-title">8.3 Sustainability & ESG Alignment</h3>
+                </div>
+                <div class="card-content">
+                    <p>Big Blue's EV-first model aligns with Malaysia's National Energy Transition Roadmap (NETR).</p>
+                    
+                    <div class="grid-3">
+                        <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Direct Emissions</div></div>
+                        <div class="stat-card"><div class="stat-value">70%</div><div class="stat-label">Lower Energy Cost vs ICE</div></div>
+                        <div class="stat-card"><div class="stat-value">100%</div><div class="stat-label">Renewable Charging Target</div></div>
+                    </div>
+                    
+                    <div class="highlight-box success" style="margin-top: 24px;">
+                        <strong>Corporate Appeal:</strong> ESG-compliant transportation option for corporate accounts seeking to reduce Scope 3 emissions. Built-in carbon tracking and reporting features enable corporate sustainability reporting.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: RISK & MITIGATION -->
+        <section class="section" id="risk-mitigation">
+            <div class="section-header">
+                <div class="section-number">9</div>
+                <h2 class="section-title">Risk Assessment & Mitigation</h2>
+                <p class="section-subtitle">Proactive identification and management of project and operational risks</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">⚠️</div>
+                    <h3 class="card-title">9.1 Risk Register</h3>
+                </div>
+                <div class="card-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Risk</th><th>Category</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Third-party API delays</strong></td><td>Technical</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td><span class="badge badge-danger">High</span></td>
+                                <td>Early engagement, mock services, contractual SLAs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scope creep</strong></td><td>Project</td>
+                                <td><span class="badge badge-danger">High</span></td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td>Strict change control, signed-off blueprint</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance bottlenecks</strong></td><td>Technical</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td>Early load testing, proven architecture patterns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security vulnerabilities</strong></td><td>Technical</td>
+                                <td><span class="badge badge-info">Low</span></td>
+                                <td><span class="badge badge-danger">High</span></td>
+                                <td>Security-by-design, code reviews, pen testing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key resource unavailability</strong></td><td>Resource</td>
+                                <td><span class="badge badge-info">Low</span></td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td>Cross-training, documentation, backup resources</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Payment gateway issues</strong></td><td>Integration</td>
+                                <td><span class="badge badge-info">Low</span></td>
+                                <td><span class="badge badge-danger">High</span></td>
+                                <td>Multi-gateway architecture, fallback processing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>App store rejection</strong></td><td>Deployment</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td>Guideline compliance from day 1, early test submissions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🛡️</div>
+                    <h3 class="card-title">9.2 Risk Mitigation Framework</h3>
+                </div>
+                <div class="card-content">
+                    <div class="architecture-diagram">
+                        <div class="diagram-title">Risk Management Process</div>
+                        <div class="flow-container">
+                            <div class="flow-box"><div class="node-icon">🔍</div><div class="node-label">Identify</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box"><div class="node-icon">📊</div><div class="node-label">Assess</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box"><div class="node-icon">📋</div><div class="node-label">Plan</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box highlight"><div class="node-icon">⚡</div><div class="node-label">Mitigate</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box"><div class="node-icon">👁️</div><div class="node-label">Monitor</div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="two-col" style="margin-top: 32px;">
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Proactive Measures</h4>
+                            <ul class="styled-list check-list">
+                                <li>Weekly risk review meetings</li>
+                                <li>Automated monitoring & alerts</li>
+                                <li>Regular stakeholder communication</li>
+                                <li>Contingency budget allocation (15%)</li>
+                                <li>Parallel path development for critical items</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold-primary); margin-bottom: 16px;">Reactive Protocols</h4>
+                            <ul class="styled-list check-list">
+                                <li>Incident response procedures defined</li>
+                                <li>Escalation matrix with contact details</li>
+                                <li>Rollback procedures for all deployments</li>
+                                <li>24/7 on-call rotation during launch</li>
+                                <li>Post-incident review process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🔄</div>
+                    <h3 class="card-title">9.3 Business Continuity Planning</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid-3">
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <h4 class="feature-title">Data Backup</h4>
+                            <p class="feature-desc">Automated daily backups with 30-day retention. Point-in-time recovery. Cross-region replication.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h4 class="feature-title">Failover</h4>
+                            <p class="feature-desc">Multi-zone deployment with automatic failover. Database HA with synchronous replication.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⏱️</div>
+                            <h4 class="feature-title">Recovery Targets</h4>
+                            <p class="feature-desc">RPO: 1 hour maximum data loss. RTO: 4 hours to full restoration. 99.9% uptime SLA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: COMMERCIAL VIABILITY -->
+        <section class="section" id="commercial-viability">
+            <div class="section-header">
+                <div class="section-number">10</div>
+                <h2 class="section-title">Commercial Viability & Winning Strategy</h2>
+                <p class="section-subtitle">Financial projections and strategic implementation approach for market success</p>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">💰</div>
+                    <h3 class="card-title">10.1 Revenue Model Analysis</h3>
+                </div>
+                <div class="card-content">
+                    <p>Multi-stream revenue model ensuring sustainable growth and profitability.</p>
+                    
+                    <div class="chart-container">
+                        <div class="chart-title">Projected Revenue Streams (Year 1-3)</div>
+                        <canvas id="revenueStreamsChart" class="chart-canvas"></canvas>
+                    </div>
+                    
+                    <h4 style="color: var(--gold-primary); margin: 32px 0 16px;">Revenue Streams Breakdown</h4>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Revenue Stream</th><th>Model</th><th>Year 1 Est.</th><th>Year 3 Est.</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Ride Commission</strong></td><td>20-25% of fare value</td><td>RM 8.4M</td><td>RM 84M</td></tr>
+                            <tr><td><strong>Premium Services</strong></td><td>Higher commission on Limo (30%)</td><td>RM 1.2M</td><td>RM 12M</td></tr>
+                            <tr><td><strong>Rent-to-Drive</strong></td><td>Daily/hourly rental fees</td><td>RM 2.1M</td><td>RM 21M</td></tr>
+                            <tr><td><strong>Corporate Accounts</strong></td><td>Subscription + usage fees</td><td>RM 1.5M</td><td>RM 15M</td></tr>
+                            <tr><td><strong>In-App Advertising</strong></td><td>Display ads, promotions</td><td>RM 0.3M</td><td>RM 6M</td></tr>
+                            <tr style="background: rgba(212, 168, 75, 0.1);"><td><strong>Total Revenue</strong></td><td></td><td><strong>RM 13.5M</strong></td><td><strong>RM 138M</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">10.2 Unit Economics</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid-4">
+                        <div class="stat-card"><div class="stat-value">RM 28</div><div class="stat-label">Avg. Fare per Trip</div></div>
+                        <div class="stat-card"><div class="stat-value">RM 6.30</div><div class="stat-label">Platform Revenue/Trip</div></div>
+                        <div class="stat-card"><div class="stat-value">12</div><div class="stat-label">Avg. Trips/Vehicle/Day</div></div>
+                        <div class="stat-card"><div class="stat-value">RM 2,268</div><div class="stat-label">Revenue/Vehicle/Month</div></div>
+                    </div>
+                    
+                    <div class="highlight-box success" style="margin-top: 32px;">
+                        <strong>EV Cost Advantage:</strong> Operating cost per kilometer for Big Blue EVs is approximately RM 0.08/km compared to RM 0.35/km for conventional vehicles — a 77% reduction in fuel costs that translates directly to driver earnings and competitive pricing.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">10.3 Market Entry Strategy</h3>
+                </div>
+                <div class="card-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">Q1</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Kuala Lumpur Launch</div>
+                                <div class="timeline-date">Months 1-6</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>500 vehicles deployed in KL city center</li>
+                                        <li>Focus on KLCC, Bukit Bintang, Bangsar corridors</li>
+                                        <li>Target: 50,000 registered riders</li>
+                                        <li>Corporate partnerships with major employers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">Q3</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Johor Bahru Expansion</div>
+                                <div class="timeline-date">Months 7-12</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>300 vehicles deployed in JB</li>
+                                        <li>Cross-border positioning (Singapore travelers)</li>
+                                        <li>Airport & Iskandar Puteri focus</li>
+                                        <li>Target: 150,000 cumulative riders</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">Q5</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Penang Market Entry</div>
+                                <div class="timeline-date">Months 13-18</div>
+                                <div class="timeline-desc">
+                                    <ul class="styled-list">
+                                        <li>200 vehicles deployed in George Town & mainland</li>
+                                        <li>Tourism segment targeting</li>
+                                        <li>Hotel & resort partnerships</li>
+                                        <li>Target: 350,000 cumulative riders</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🏁</div>
+                    <h3 class="card-title">10.4 Competitive Positioning</h3>
+                </div>
+                <div class="card-content">
+                    <div class="chart-container">
+                        <div class="chart-title">Competitive Positioning Matrix</div>
+                        <canvas id="competitiveChart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll">
+                <div class="card-header">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">10.5 Winning Strategy Summary</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid-2">
+                        <div class="highlight-box" style="border-left-color: var(--gold-primary);">
+                            <h4 style="color: var(--gold-primary); margin-bottom: 12px;">Technology Excellence</h4>
+                            <ul class="styled-list">
+                                <li>Best-in-class user experience</li>
+                                <li>Sub-second location updates</li>
+                                <li>99.9% platform uptime</li>
+                                <li>Seamless multi-service booking</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box" style="border-left-color: var(--success);">
+                            <h4 style="color: var(--success); margin-bottom: 12px;">Operational Excellence</h4>
+                            <ul class="styled-list">
+                                <li>Consistent, high-quality fleet</li>
+                                <li>Trained, professional drivers</li>
+                                <li>Integrated charging infrastructure</li>
+                                <li>Real-time fleet optimization</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box" style="border-left-color: var(--info);">
+                            <h4 style="color: var(--info); margin-bottom: 12px;">Market Strategy</h4>
+                            <ul class="styled-list">
+                                <li>Focused city-by-city expansion</li>
+                                <li>Corporate account acquisition</li>
+                                <li>Strategic partnership leverage</li>
+                                <li>Brand differentiation on sustainability</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box" style="border-left-color: var(--warning);">
+                            <h4 style="color: var(--warning); margin-bottom: 12px;">Financial Discipline</h4>
+                            <ul class="styled-list">
+                                <li>Unit economics positive from Year 1</li>
+                                <li>Capital efficient growth model</li>
+                                <li>Multiple revenue stream diversification</li>
+                                <li>Clear path to profitability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-diagram" style="margin-top: 32px;">
+                        <div class="diagram-title">Path to Market Leadership</div>
+                        <div class="flow-container">
+                            <div class="flow-box"><div class="node-icon">🚀</div><div class="node-label">Launch KL</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box"><div class="node-icon">📈</div><div class="node-label">Scale Fleet</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box"><div class="node-icon">🌍</div><div class="node-label">Expand Cities</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box"><div class="node-icon">🤝</div><div class="node-label">Corporate Growth</div></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box highlight"><div class="node-icon">🏆</div><div class="node-label">Market Leader</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card animate-on-scroll" style="background: linear-gradient(135deg, rgba(212, 168, 75, 0.15), rgba(212, 168, 75, 0.05)); border-color: var(--gold-primary);">
+                <div class="card-header">
+                    <div class="card-icon" style="background: var(--gold-primary); color: var(--navy-deep);">✨</div>
+                    <h3 class="card-title" style="color: var(--gold-primary);">Conclusion & Call to Action</h3>
+                </div>
+                <div class="card-content">
+                    <p style="font-size: 1.125rem; line-height: 1.8;">AG Alchemy Consultancy Sdn Bhd is uniquely positioned to deliver the Big Blue SuperApp — a transformative mobility platform that will establish Big Blue Berhad as Malaysia's premier electric vehicle ride-hailing service.</p>
+                    
+                    <p style="margin-top: 20px;">Our comprehensive proposal demonstrates:</p>
+                    
+                    <ul class="styled-list check-list" style="margin: 24px 0;">
+                        <li><strong>Technical Excellence:</strong> Modern, scalable architecture designed for 2M+ users</li>
+                        <li><strong>Rapid Delivery:</strong> 90-day timeline with proven agile methodology</li>
+                        <li><strong>Integration Expertise:</strong> Seamless Cherry EV, JomCharge, and payment gateway connectivity</li>
+                        <li><strong>Risk Management:</strong> Proactive identification and mitigation strategies</li>
+                        <li><strong>Commercial Viability:</strong> Clear path to profitability with sustainable unit economics</li>
+                    </ul>
+                    
+                    <div class="highlight-box" style="border-left-color: var(--gold-primary); margin-top: 32px;">
+                        <p style="font-size: 1.1rem; margin: 0;"><strong>We respectfully request Big Blue Berhad's approval of this proposal to proceed with the System Blueprint development phase. Together, we will create Malaysia's most innovative and sustainable mobility platform.</strong></p>
+                    </div>
+                    
+                    <p style="margin-top: 32px; text-align: center; color: var(--gold-primary); font-family: var(--font-heading); font-size: 1.25rem;">
+                        <em>"Driving Malaysia's Sustainable Mobility Future"</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="proposal-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Document Information</h4>
+                <p>
+                    <strong>Reference:</strong> BBB-LOA-AG/ACSB/DEC2025<br>
+                    <strong>Version:</strong> 1.0<br>
+                    <strong>Classification:</strong> STRICTLY CONFIDENTIAL
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Prepared By</h4>
+                <p>
+                    <strong>AG Alchemy Consultancy Sdn Bhd</strong><br>
+                    (Company No: 857857-T)<br>
+                    26th Floor, Menara Maxis, Kuala Lumpur
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>
+                    IR. TS. Azlan Abas, P.E, CCA, PMP<br>
+                    +6012-6012 560 | +62817 691 7122<br>
+                    azlan@netlio.com
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Legal Notice</h4>
+                <p>This document contains proprietary information. Unauthorized distribution, reproduction, or use is strictly prohibited without written consent.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <span>📍 Taman Petaling, Kuala Lumpur, MY</span>
+                <span>|</span>
+                <span>Developed by <strong>net1io.com</strong></span>
+                <span>|</span>
+                <span>© 2025 AG Alchemy Consultancy Sdn Bhd. All Rights Reserved.</span>
+            </div>
+            <div class="footer-timestamp" id="footerTimestamp"></div>
+        </div>
+    </footer>
+
+    <script src="src/main.js"></script>
+</body>
+</html>
