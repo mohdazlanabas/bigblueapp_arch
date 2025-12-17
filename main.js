@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initAccordions();
     initCharts();
+    initHeaderLayout();
     updateFooterTimestamp();
     initSmoothScroll();
 });
@@ -66,6 +67,35 @@ function initNavigation() {
             }
         });
     });
+}
+
+/**
+ * Adjusts header padding to prevent overlap with the nav toggle on mobile.
+ */
+function initHeaderLayout() {
+    const navToggle = document.getElementById('navToggle');
+    const headerContent = document.querySelector('.page-header .header-content'); // Assuming this is your header text container
+
+    if (!navToggle || !headerContent) {
+        console.warn('Header layout adjustment elements not found.');
+        return;
+    }
+
+    const adjustPadding = () => {
+        // Check if the navToggle is visible (i.e., we are in mobile view)
+        if (window.getComputedStyle(navToggle).display !== 'none') {
+            const toggleWidth = navToggle.offsetWidth;
+            // Add padding to the right of the header content to avoid overlap
+            headerContent.style.paddingRight = `${toggleWidth + 15}px`;
+        } else {
+            // Reset padding on desktop view
+            headerContent.style.paddingRight = '0px';
+        }
+    };
+
+    // Adjust on load and on window resize
+    adjustPadding();
+    window.addEventListener('resize', adjustPadding);
 }
 
 /**
