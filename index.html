@@ -52,8 +52,8 @@
                     <div class="cover-meta">
                         <div class="cover-meta-item"><div class="cover-meta-label">Prepared For</div><div class="cover-meta-value">Big Blue Berhad</div></div>
                         <div class="cover-meta-item"><div class="cover-meta-label">Prepared By</div><div class="cover-meta-value">AG Alchemy Consultancy Sdn Bhd</div></div>
-                        <div class="cover-meta-item"><div class="cover-meta-label">Reference</div><div class="cover-meta-value">BBB-LOA-AG/ACSB/DEC2025</div></div>
                         <div class="cover-meta-item"><div class="cover-meta-label">Version</div><div class="cover-meta-value">1.0 - December 2025</div></div>
+                        <div class="cover-meta-item"><div class="cover-meta-label">Reference</div><div class="cover-meta-value">BBB-LOA-AG/ACSB/DEC2025</div></div>
                     </div>
                 </section>
             </div>
@@ -176,7 +176,7 @@
                     </div>
 
                     <div class="grid-2">
-                        <div class="content-card animate-on-scroll">
+                        <div class="content-card animate-on-scroll performance-targets-card">
                             <div class="card-header">
                                 <div class="card-icon">🏗️</div>
                                 <h3 class="card-title">Architecture Layers</h3>
@@ -452,17 +452,31 @@
                             
                             <div class="two-col">
                                 <div>
-                                    <h4 style="color: var(--gold-primary); margin-bottom: 12px;">AI-Powered Dispatch Algorithm</h4>
-                                    <table class="data-table">
-                                        <thead><tr><th>Factor</th><th>Weight</th></tr></thead>
-                                        <tbody>
-                                            <tr><td>Proximity to pickup</td><td>40%</td></tr>
-                                            <tr><td>ETA (with traffic)</td><td>25%</td></tr>
-                                            <tr><td>Driver rating</td><td>15%</td></tr>
-                                            <tr><td>Battery level</td><td>10%</td></tr>
-                                            <tr><td>Acceptance rate</td><td>10%</td></tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="dispatch-algorithm">
+                                        <div class="dispatch-title">AI-Powered Dispatch Algorithm</div>
+                                        <div class="dispatch-weights">
+                                            <div class="dispatch-weight">
+                                                <span class="dispatch-factor">Proximity to pickup</span>
+                                                <span class="dispatch-score">40%</span>
+                                            </div>
+                                            <div class="dispatch-weight">
+                                                <span class="dispatch-factor">ETA (with traffic)</span>
+                                                <span class="dispatch-score">25%</span>
+                                            </div>
+                                            <div class="dispatch-weight">
+                                                <span class="dispatch-factor">Driver rating</span>
+                                                <span class="dispatch-score">15%</span>
+                                            </div>
+                                            <div class="dispatch-weight">
+                                                <span class="dispatch-factor">Battery level</span>
+                                                <span class="dispatch-score">10%</span>
+                                            </div>
+                                            <div class="dispatch-weight">
+                                                <span class="dispatch-factor">Acceptance rate</span>
+                                                <span class="dispatch-score">10%</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
                                     <h4 style="color: var(--gold-primary); margin-bottom: 12px;">Advanced Features</h4>
@@ -843,23 +857,44 @@
                             </div>
                         </div>
 
-                        <div class="content-card animate-on-scroll">
+                        <div class="content-card animate-on-scroll performance-targets">
                             <div class="card-header">
                                 <div class="card-icon">⚡</div>
                                 <h3 class="card-title">Performance Targets</h3>
                             </div>
                             <div class="card-content">
-                                <div class="grid-2">
-                                    <div class="stat-card"><div class="stat-value">&lt;200ms</div><div class="stat-label">API P95</div></div>
-                                    <div class="stat-card"><div class="stat-value">&lt;15s</div><div class="stat-label">Match Time</div></div>
-                                    <div class="stat-card"><div class="stat-value">99.9%</div><div class="stat-label">Uptime</div></div>
-                                    <div class="stat-card"><div class="stat-value">&lt;5s</div><div class="stat-label">Payments</div></div>
+                                <div class="target-metrics">
+                                    <div class="target-metric">
+                                        <div class="target-value">&lt;200ms</div>
+                                        <div class="target-label">API P95</div>
+                                    </div>
+                                    <div class="target-metric">
+                                        <div class="target-value">&lt;15s</div>
+                                        <div class="target-label">Match Time</div>
+                                    </div>
+                                    <div class="target-metric">
+                                        <div class="target-value">99.9%</div>
+                                        <div class="target-label">Uptime</div>
+                                    </div>
+                                    <div class="target-metric">
+                                        <div class="target-value">&lt;5s</div>
+                                        <div class="target-label">Payments</div>
+                                    </div>
                                 </div>
-                                <ul class="styled-list" style="margin-top: 12px;">
-                                    <li><strong>Autoscaling:</strong> CPU/RPS driven scaling policies</li>
-                                    <li><strong>Reliability:</strong> caching, circuit breakers, blue/green deploys</li>
-                                    <li><strong>Testing:</strong> load testing + regression gates</li>
-                                </ul>
+                                <div class="target-notes">
+                                    <div class="target-note">
+                                        <span class="badge badge-gold">Autoscaling</span>
+                                        <div class="target-text">CPU/RPS driven scaling policies</div>
+                                    </div>
+                                    <div class="target-note">
+                                        <span class="badge badge-info">Reliability</span>
+                                        <div class="target-text">Caching, circuit breakers, blue/green deploys</div>
+                                    </div>
+                                    <div class="target-note">
+                                        <span class="badge badge-success">Testing</span>
+                                        <div class="target-text">Load testing + regression gates</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1156,21 +1191,33 @@
                         </div>
                     </div>
 
-                    <div class="content-card animate-on-scroll">
+                    <div class="content-card animate-on-scroll unit-econ-card">
                         <div class="card-header">
                             <div class="card-icon">📊</div>
                             <h3 class="card-title">10.2 Unit Economics</h3>
                         </div>
                         <div class="card-content">
-                            <div class="grid-4">
-                                <div class="stat-card"><div class="stat-value">RM 28</div><div class="stat-label">Avg Fare/Trip</div></div>
-                                <div class="stat-card"><div class="stat-value">RM 6.30</div><div class="stat-label">Platform Rev/Trip</div></div>
-                                <div class="stat-card"><div class="stat-value">12</div><div class="stat-label">Trips/Vehicle/Day</div></div>
-                                <div class="stat-card"><div class="stat-value">RM 2,268</div><div class="stat-label">Rev/Vehicle/Month</div></div>
+                            <div class="unit-econ-list">
+                                <div class="unit-econ-item">
+                                    <span class="unit-econ-label">Avg Fare/Trip</span>
+                                    <span class="unit-econ-value">RM 28</span>
+                                </div>
+                                <div class="unit-econ-item">
+                                    <span class="unit-econ-label">Platform Rev/Trip</span>
+                                    <span class="unit-econ-value">RM 6.30</span>
+                                </div>
+                                <div class="unit-econ-item">
+                                    <span class="unit-econ-label">Trips/Vehicle/Day</span>
+                                    <span class="unit-econ-value">12</span>
+                                </div>
+                                <div class="unit-econ-item">
+                                    <span class="unit-econ-label">Rev/Vehicle/Month</span>
+                                    <span class="unit-econ-value">RM 2,268</span>
+                                </div>
                             </div>
-
-                            <div class="highlight-box success" style="margin-top: 16px;">
-                                <strong>EV Advantage:</strong> RM 0.08/km operating cost vs RM 0.35/km for ICE — 77% savings that enables competitive pricing + driver profitability.
+                            <div class="unit-econ-highlight">
+                                <span class="badge badge-success">EV Advantage</span>
+                                <span class="unit-econ-text">RM 0.08/km vs RM 0.35/km ICE — 77% savings enables competitive pricing + driver profitability.</span>
                             </div>
                         </div>
                     </div>
@@ -1186,39 +1233,27 @@
                         <p class="section-subtitle">Market entry and positioning</p>
                     </div>
 
-                    <div class="content-card animate-on-scroll">
+                    <div class="content-card animate-on-scroll market-entry-card">
                         <div class="card-header">
                             <div class="card-icon">🎯</div>
                             <h3 class="card-title">10.3 Market Entry Strategy</h3>
                         </div>
                         <div class="card-content">
-                            <div class="grid-3">
-                                <div class="timeline-content" style="background: rgba(26, 58, 92, 0.5); border-radius: 8px; padding: 16px;">
-                                    <div class="timeline-title">Kuala Lumpur</div>
-                                    <div class="timeline-date">Months 1-6</div>
-                                    <ul class="styled-list" style="font-size: 0.85rem;">
-                                        <li>500 vehicles</li>
-                                        <li>KLCC, Bukit Bintang, Bangsar</li>
-                                        <li>Target: 50K riders</li>
-                                    </ul>
+                            <div class="market-steps">
+                                <div class="market-step">
+                                    <div class="market-region">Kuala Lumpur</div>
+                                    <div class="market-window">Months 1-6</div>
+                                    <div class="market-details">500 vehicles • KLCC, Bukit Bintang, Bangsar • Target: 50K riders</div>
                                 </div>
-                                <div class="timeline-content" style="background: rgba(26, 58, 92, 0.5); border-radius: 8px; padding: 16px;">
-                                    <div class="timeline-title">Johor Bahru</div>
-                                    <div class="timeline-date">Months 7-12</div>
-                                    <ul class="styled-list" style="font-size: 0.85rem;">
-                                        <li>300 vehicles</li>
-                                        <li>Airport, Iskandar Puteri</li>
-                                        <li>Target: 150K cumulative</li>
-                                    </ul>
+                                <div class="market-step">
+                                    <div class="market-region">Johor Bahru</div>
+                                    <div class="market-window">Months 7-12</div>
+                                    <div class="market-details">300 vehicles • Airport, Iskandar Puteri • Target: 150K cumulative</div>
                                 </div>
-                                <div class="timeline-content" style="background: rgba(26, 58, 92, 0.5); border-radius: 8px; padding: 16px;">
-                                    <div class="timeline-title">Penang</div>
-                                    <div class="timeline-date">Months 13-18</div>
-                                    <ul class="styled-list" style="font-size: 0.85rem;">
-                                        <li>200 vehicles</li>
-                                        <li>George Town, tourism</li>
-                                        <li>Target: 350K cumulative</li>
-                                    </ul>
+                                <div class="market-step">
+                                    <div class="market-region">Penang</div>
+                                    <div class="market-window">Months 13-18</div>
+                                    <div class="market-details">200 vehicles • George Town, tourism • Target: 350K cumulative</div>
                                 </div>
                             </div>
                         </div>
