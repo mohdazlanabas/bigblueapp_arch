@@ -1390,17 +1390,59 @@ body {
 }
 
 @media (max-width: 768px) {
+    .proposal-container {
+        height: auto;
+        overflow: visible;
+    }
+
+    .slides-container {
+        height: auto;
+    }
+
     .slide {
-        padding: 30px 20px 70px;
+        height: 100vh;
+        padding: 20px 16px 90px;
+        justify-content: flex-start;
+        align-items: stretch;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .section-header {
-        padding: 20px 20px 10px;
+        padding: 16px 8px 8px;
+        margin-bottom: 20px;
     }
 
     .content-card {
-        padding: 16px 20px;
-        margin: 0 20px 12px;
+        padding: 16px;
+        margin: 0 0 12px;
+    }
+
+    .section {
+        height: auto;
+        overflow: visible;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
     }
 
     .cover-meta {
@@ -1418,6 +1460,10 @@ body {
         font-size: 0.8rem;
     }
 
+    .chart-canvas {
+        max-height: 220px;
+    }
+
     .slide-nav-btn {
         width: 40px;
         height: 40px;
@@ -1427,6 +1473,14 @@ body {
     .slide-counter {
         padding: 6px 14px;
         font-size: 0.8rem;
+    }
+
+    .slide-nav {
+        bottom: 12px;
+    }
+
+    .slide-dots {
+        display: none;
     }
 }
 
