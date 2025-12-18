@@ -87,6 +87,12 @@ body {
     user-select: none;
 }
 
+/* Desktop note */
+.desktop-note {
+    text-align: center;
+    width: 100%;
+}
+
 /* Main Container - 16:9 Slide Format */
 .proposal-container {
     position: relative;
